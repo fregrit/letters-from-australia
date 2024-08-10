@@ -3,11 +3,5 @@
   "description": "A project.",
   "require": {
     "monolog/monolog": "^2.0"
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "chmod -R 755 /app/www",
-      "chmod -R 755 /app/logs"
-    ]
   }
 }
