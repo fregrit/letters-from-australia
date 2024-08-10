@@ -1,0 +1,22 @@
+# docker-compose.yml
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-webserver
+    volumes:
+      - .:/var/www
+      - ./www:/var/www/html
+      - ./logs:/var/www/logs
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+    environment:
+      - COMPOSER_HOME=/var/www
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge

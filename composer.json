@@ -1,0 +1,7 @@
+{
+  "name": "fregrit/letters-from-australia",
+  "description": "A project.",
+  "require": {
+    "monolog/monolog": "^2.0"
+  }
+}

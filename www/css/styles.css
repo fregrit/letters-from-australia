@@ -1,0 +1,353 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sticky-header, .sticky-footer {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  z-index: 1000;
+  text-align: center;
+  height: 2em;
+  line-height: 2em;
+  background-color: #fff; /* Solid white background */
+}
+
+.sticky-header::before, .sticky-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 0, 0, 0.4),
+    rgba(255, 0, 0, 0.4) 40px,
+    rgba(255, 255, 255, 0.4) 40px,
+    rgba(255, 255, 255, 0.4) 80px,
+    rgba(0, 0, 255, 0.4) 80px,
+    rgba(0, 0, 255, 0.4) 120px,
+    rgba(255, 255, 255, 0.4) 120px,
+    rgba(255, 255, 255, 0.4) 160px
+  );
+  z-index: -1;
+}
+
+.sticky-header {
+  top: 0;
+  width: 100%;
+}
+
+.sticky-header nav {
+  max-height: 36px;
+}
+
+.sticky-footer {
+  bottom: 0;
+  width: 100%;
+}
+
+main {
+  padding-top: 2em; /* Match the fixed header height */
+  padding-bottom: 2em; /* Match the fixed footer height */
+  min-height: calc(100vh - 4em); /* Adjust based on header and footer height */
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px; /* Adjust this value as needed */
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: left; /* Ensures content is not centered */
+}
+
+.label-printer {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font to mimic label printer */
+  padding: 2px 8px;
+  text-transform: uppercase; /* Optional: for uppercase text */
+}
+
+.label-printer.card-title,
+label.label-printer {
+  padding-left:0;
+  font-weight: bold;
+}
+
+.card-title span {
+  color: green;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+
+.col-12 {
+  margin-bottom: 2rem;
+}
+
+
+
+
+#language-switcher-wrapper {
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+  bottom:2px;
+}
+
+.language-switcher {
+  position: relative;
+  top: 50%;
+  width: 62px;
+  height: 20px;
+  margin: -20px auto 0 auto;
+  border-radius: 100px;
+}
+
+.language-switcher .checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.language-switcher .knobs {
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+  z-index: 2;
+}
+
+.language-switcher .layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+  border-radius: 100px;
+  border: 1px solid #a8a8a8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.language-switcher .checkbox:checked + .knobs {
+  left: 42px;
+  background-color: #f44336;
+}
+
+.language-switcher .checkbox:checked + .knobs:before {
+  content: "NEJ";
+  left: -2px;
+}
+
+.language-switcher .knobs:before {
+  content: "JA";
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  width: 20px;
+  height: 10px;
+  color: #fff;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+.language-switcher .checkbox:checked ~ .layer {
+  background-color: #fcebeb;
+}
+
+.language-switcher-wrapper label {
+  vertical-align: middle;
+  position: relative;
+  top: 2px;
+}
+
+.language-switcher-wrapper .toggle-button-cover {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.image-cell {
+  overflow: hidden;
+}
+
+.image-cell img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+/* General Typography */
+body {
+  font-family: 'Georgia', 'Times New Roman', serif; /* Use a serif font for long-form reading */
+  font-size: 18px; /* Larger font size for better readability */
+  line-height: 1.6; /* Optimal line height for readability (usually 1.5 to 1.7) */
+  color: #333; /* Dark gray text color is easier on the eyes than pure black */
+  background-color: #fafafa; /* Light background color to reduce eye strain */
+}
+
+/* Letter Content */
+.letter-content p,
+.letter-content-modern p {
+  margin-bottom: 1.5em; /* Space between paragraphs */
+  max-width: 70ch; /* Limit line length to 70 characters, including spaces */
+}
+
+/* For block quotes or highlighted text */
+blockquote {
+  font-style: italic;
+  margin: 0 0 1.5em 0;
+  padding-left: 1.5em;
+  border-left: 4px solid #ccc;
+  color: #555;
+}
+
+/* Adjusting text contrast */
+.letter-content,
+.letter-content-modern {
+  background-color: #fff; /* White background for text readability */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to make text box stand out */
+}
+
+/* Responsive text sizing */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Default styling for large screens */
+.regular-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.regular-menu > div:first-child {
+  display: flex;
+}
+
+.regular-menu > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+
+.hamburger-menu {
+  display: none;
+}
+
+#hamburger-button {
+  border: none;
+  line-height: 28px;
+
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .regular-menu {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+    position: relative;
+  }
+
+  #hamburger-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+    width:330px;
+  }
+
+  #hamburger-dropdown > div,
+  #hamburger-dropdown > a {
+    display: block;
+  }
+
+  #hamburger-button[aria-expanded="true"] + #hamburger-dropdown {
+    display: block;
+  }
+
+  .hamburger-icon {
+    font-size: 24px;
+  }
+}
+
+
+
+
+

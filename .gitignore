@@ -1,0 +1,20 @@
+# Ignore vendor directory (Composer dependencies)
+vendor/
+
+# Ignore cache directory
+www/cache/
+
+# Ignore Composer lock file if you don't want to lock dependencies
+composer.lock
+
+# Ignore system files
+.DS_Store
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+
+# Ignore swap files
+*.swp
