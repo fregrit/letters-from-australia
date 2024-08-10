@@ -12,6 +12,11 @@ Before you begin, ensure you have met the following requirements:
 
 - **Docker**: This project uses Docker to simplify the setup process. Ensure Docker and Docker Compose are installed on your system.
 - **Git**: For cloning the repository.
+- **Heroku CLI** (optional for Heroku deployment): If you plan to deploy this project to Heroku, you'll need the Heroku CLI installed on your Mac. You can install it via Homebrew with the following command:
+
+   ```bash
+   brew tap heroku/brew && brew install heroku
+   ```
 
 ## Installation
 
@@ -43,6 +48,50 @@ Before you begin, ensure you have met the following requirements:
    ```
    http://localhost:8080
    ```
+
+## Heroku Deployment
+
+This project includes a `Procfile` that makes it easy to deploy to Heroku. The `Procfile` specifies the commands needed to run the application on Heroku using Apache and PHP.
+
+### Setting Up Heroku on a Mac
+
+1. **Install the Heroku CLI** (if not already installed):
+
+   ```bash
+   brew tap heroku/brew && brew install heroku
+   ```
+
+2. **Log in to Heroku**:
+
+   ```bash
+   heroku login
+   ```
+
+3. **Create a Heroku App**:
+
+   ```bash
+   heroku create
+   ```
+
+4. **Deploy to Heroku**:
+
+   Simply push your code to Heroku:
+
+   ```bash
+   git push heroku main
+   ```
+
+   Heroku will automatically use the `Procfile` to set up the application.
+
+5. **Open Your Deployed App**:
+
+   After deployment, open your app in the browser:
+
+   ```bash
+   heroku open
+   ```
+
+With these steps, you'll have the application running on Heroku, leveraging the `Procfile` configuration for an easy and streamlined deployment process.
 
 ## Usage
 
