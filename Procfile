@@ -1,1 +1,1 @@
-web: apache2-foreground
+web: heroku-php-apache2
