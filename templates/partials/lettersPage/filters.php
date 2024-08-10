@@ -25,11 +25,9 @@
         <?php endforeach; ?>
       <?php endif; ?>
     </div>
-    <!-- Enhanced Reset Filter Button -->
     <a href="/<?= $language; ?>/letters" class="btn btn-danger btn-sm"><?= translate("Reset filter"); ?></a>
   </div>
 
-  <!-- Show the number of letters -->
   <div class="mb-4">
     <strong><?= translate("Showing"); ?> <?= count($letters); ?> <?= translate("letters", "written messages"); ?></strong>
   </div>

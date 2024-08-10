@@ -1,4 +1,3 @@
-<!-- templates/partials/header.php -->
 <?php
 $title = translate("Letters from Australia");
 
@@ -12,22 +11,18 @@ if (isset($letter)) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
   <title><?=$title;?></title>
   
-  <!-- Hreflang Tags -->
   <?php foreach ($urls as $langCode => $url): ?>
     <link rel="alternate" hreflang="<?=$langCode;?>" href="<?=$url;?>" />
   <?php endforeach; ?>
   
-  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="<?=$title;?>" />
   <meta property="og:description" content="<?=translate("A collection of letters sent from Australia to Sweden in the early 1970s.");?>" />
   <meta property="og:image" content="<?=PolaroidPics::getByFilename("4.jpeg");?>" />
   <meta property="og:url" content="http://yourwebsite.com" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="<?=$title;?>" />
   <meta name="twitter:description" content="<?=translate("A collection of letters sent from Australia to Sweden in the early 1970s.");?>" />
@@ -59,7 +54,7 @@ if (isset($letter)) {
   <header class="sticky-header">
     <div class="container">
       <nav>
-        <!-- Hamburger Menu for Small Screens -->
+
         <div class="hamburger-menu">
           <button id="hamburger-button" aria-expanded="false">
             <span class="hamburger-icon">☰</span>
@@ -67,7 +62,7 @@ if (isset($letter)) {
           <div id="hamburger-dropdown" class="dropdown-content">
             <a href="/<?=$language;?>" class="nav-link label-printer"><?=translate("Home");?></a>
             <a href="/<?=$language;?>/letters" class="nav-link label-printer"><?=translate("All letters", "All written messages");?></a>
-            <!-- Language style Toggle Switch -->
+
             <?php if ($language === 'sv' && isset($letter) && !empty($letter['content_sv_modern'])): ?>
               <div class="language-switcher-wrapper label-printer">
                 <label for="languageToggle1" class="mr-2"><?=translate("Modern Swedish");?>:</label>
@@ -89,14 +84,14 @@ if (isset($letter)) {
             <?php endforeach; ?>
           </div>
         </div>
-        <!-- Regular Menu for Large Screens -->
+
         <div class="regular-menu">
           <div class="page-links">
             <a href="/<?=$language;?>" class="nav-link label-printer"><?=translate("Home");?></a>
             <a href="/<?=$language;?>/letters" class="nav-link label-printer"><?=translate("All letters", "All written messages");?></a>
           </div>
           <div class="language-controls">
-          <!-- Language style Toggle Switch -->
+
           <?php if ($language === 'sv' && isset($letter) && !empty($letter['content_sv_modern'])): ?>
             <div class="language-switcher-wrapper label-printer">
               <label for="languageToggle2" class="mr-2"><?=translate("Modern Swedish");?>:</label>

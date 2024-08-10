@@ -1,11 +1,9 @@
-<!-- websitePage.php -->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <div class="text-center">
         <h1><?= translate("About This Website"); ?></h1>
 
-        <!-- Section about the creator -->
         <div class="my-5">
           <img src="/images/margareta_vilmer_fredrik.png" class="img-fluid mb-3" alt="<?= translate("Image of Fredrik Fastén with Margareta and Fredrik son Vilmer"); ?>">
           <p><?= translate("
@@ -15,7 +13,6 @@
           "); ?></p>
         </div>
 
-        <!-- Section about open source -->
         <div class="my-5">
           <img src="/images/GitHub_Logo.png" class="img-fluid mb-3" alt="<?= translate("GitHub Logo"); ?>">
           <p><?= translate("
@@ -29,7 +26,6 @@
           </p>
         </div>
 
-        <!-- Footer message -->
         <div class="mt-5">
           <p><?= translate("
             Thank you for visiting and exploring this piece of history. 

@@ -3,10 +3,13 @@ FROM php:apache
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
-  git
+  git \
+  libbrotli-dev
 
-# Enable mod_rewrite
+# Enable mod_rewrite, mod_deflate, and mod_brotli
 RUN a2enmod rewrite
+RUN a2enmod deflate
+RUN a2enmod brotli
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

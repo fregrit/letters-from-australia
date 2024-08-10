@@ -1,14 +1,11 @@
-<!-- letterPage.php -->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-8">
 
-      <!-- Letter Header -->
       <div class="letter-header text-center">
         <h1><?= htmlspecialchars($letter['date']); ?></h1>
       </div>
 
-      <!-- Previous and Next Navigation -->
       <?php
         $currentIndex = array_search($letter['date'], $allLetterDates);
         $prevIndex = $currentIndex > 0 ? $currentIndex - 1 : null;
@@ -31,12 +28,10 @@
         <?php endif; ?>
       </div>
 
-      <!-- Original Letter Content -->
       <div class="letter-content">
         <p><?= nl2br(htmlspecialchars($letter['content'])); ?></p>
       </div>
 
-      <!-- Modernized Letter Content (Hidden by Default) -->
       <?php if ($language === 'sv' && !empty($letter['content_sv_modern'])): ?>
         <div class="letter-content-modern" style="display: none;">
           <p><?= nl2br(htmlspecialchars($letter['content_sv_modern'])); ?></p>
@@ -60,7 +55,6 @@
         <?php endif; ?>
       </div>
 
-      <!-- Thumbnail Images Row -->
       <div class="image-grid mb-4">
         <?php foreach ($letter['images'] as $image): ?>
           <?php if (strpos($image, '_thumbnail.webp') !== false && strpos($image, 'Kuvert') === false): ?>
