@@ -4,9 +4,6 @@ vendor/
 # Ignore cache directory
 www/cache/
 
-# Ignore Composer lock file if you don't want to lock dependencies
-composer.lock
-
 # Ignore system files
 .DS_Store
 
