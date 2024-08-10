@@ -8,7 +8,8 @@ foreach (glob(__DIR__ . '/../include/classes/*.php') as $filename) {
 }
 
 // Determine the protocol (http or https) based on the environment
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https' : 'http';
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)) ? 'https' : 'http';
+
 
 // Determine the domain based on the environment
 $domain = $_SERVER['HTTP_HOST'] ?? 'localhost:8080';
