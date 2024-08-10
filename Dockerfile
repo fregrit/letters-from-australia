@@ -12,26 +12,19 @@ RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Copy the entire project
-COPY . /var/www
-
-# Set permissions for build-scripts
-RUN chmod -R +x /var/www/build-scripts
+COPY . /app
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR /app
 
 # Copy custom Apache configuration
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 
 # Create logs directory and set permissions
-RUN mkdir -p /var/www/logs && chmod -R 755 /var/www/logs
+RUN mkdir -p /app/logs && chmod -R 755 /app/logs
 
 # Set permissions for the www directory
-RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
-
-# Copy translations.json and set permissions
-COPY data/translations.json /var/www/data/translations.json
-RUN chmod 644 /var/www/data/translations.json
+RUN chown -R www-data:www-data /app/www && chmod -R 755 /app/www
 
 # Copy php.ini
 COPY php.ini /usr/local/etc/php/
