@@ -5,7 +5,7 @@
         <h1><?= translate("About This Website"); ?></h1>
 
         <div class="my-5">
-          <img src="/images/margareta_vilmer_fredrik.png" class="img-fluid mb-3" alt="<?= translate("Image of Fredrik Fastén with Margareta and Fredrik son Vilmer"); ?>">
+          <img src="/images/margareta_vilmer_fredrik.webp" class="img-fluid mb-3" alt="<?= translate("Image of Fredrik Fastén with Margareta and Fredrik son Vilmer"); ?>">
           <p><?= translate("
             This website was created from scratch by Fredrik Fastén, Margareta's son, who was born in 1983. 
             It serves as a tribute to her life and legacy, preserving the letters she wrote from Australia to Sweden in the early 1970s. 
@@ -14,7 +14,7 @@
         </div>
 
         <div class="my-5">
-          <img src="/images/GitHub_Logo.png" class="img-fluid mb-3" alt="<?= translate("GitHub Logo"); ?>">
+          <img src="/images/GitHub_Logo.webp" class="img-fluid mb-3" alt="<?= translate("GitHub Logo"); ?>">
           <p><?= translate("
             This website is open source, and you can view, copy, and use the code in whatever way you want.
             The site does not use any cookies, ensuring a simple and privacy-focused experience for visitors.
