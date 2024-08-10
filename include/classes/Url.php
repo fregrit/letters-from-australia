@@ -37,6 +37,11 @@ class Url
     return $url;
   }
 
+  public function getStartpageUrl(): string
+  {
+    return $this->buildUrl();
+  }
+
   public function getLanguageUrls(string $path = ''): array
   {
     $urls = [];

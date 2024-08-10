@@ -12,6 +12,7 @@ if (isset($letter)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?=$title;?></title>
+  <meta name="description" content="<?=translate("A collection of letters sent from Australia to Sweden in the early 1970s.");?>" />
   
   <?php foreach ($urls as $langCode => $url): ?>
     <link rel="alternate" hreflang="<?=$langCode;?>" href="<?=$url;?>" />
@@ -20,7 +21,7 @@ if (isset($letter)) {
   <meta property="og:title" content="<?=$title;?>" />
   <meta property="og:description" content="<?=translate("A collection of letters sent from Australia to Sweden in the early 1970s.");?>" />
   <meta property="og:image" content="<?=PolaroidPics::getByFilename("4.jpeg");?>" />
-  <meta property="og:url" content="http://yourwebsite.com" />
+  <meta property="og:url" content="<?= Url::getInstance()->getStartpageUrl();?>" />
   <meta property="og:type" content="website" />
 
   <meta name="twitter:card" content="summary_large_image" />

@@ -20,7 +20,7 @@ class Router
       "/^\/($languagePattern)$/" => 'startPage',
       "/^\/($languagePattern)\/letters$/" => 'lettersPage',
       "/^\/($languagePattern)\/(\d{4}-\d{2}-\d{2})$/" => 'letterPage',
-      "/^\/($languagePattern)\/website$/" => 'websitePage', // Add route for websitePage
+      "/^\/($languagePattern)\/website$/" => 'websitePage',
     ];
   }
 
@@ -62,7 +62,7 @@ class Router
 
   private function redirectToDefaultLanguage(): void
   {
-    $defaultLanguage = 'sv'; // Set your default language here
+    $defaultLanguage = 'sv';
     header("Location: /$defaultLanguage");
     exit;
   }
@@ -108,8 +108,6 @@ class Router
   private function lettersPage(string $language): void
   {
     $letters = new Letters();
-
-    // Retrieve query parameters
     $params = [];
 
     if (!empty($_GET['keywords'])) {
